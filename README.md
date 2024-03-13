@@ -39,3 +39,4 @@ Input shape (1, 3, 8750, 8750) -  inference 12114ms
     ```
 3. Copy the output and open `native_pytorch/linux/CMakeLists.txt`
 4. Replace `list(APPEND CMAKE_PREFIX_PATH "/home/pc/anaconda3/envs/torch-gpu/lib/python3.8/site-packages/torch/share/cmake")` with `list(APPEND CMAKE_PREFIX_PATH "your_output")`
+5. Run `scripts/init_linux.sh`
