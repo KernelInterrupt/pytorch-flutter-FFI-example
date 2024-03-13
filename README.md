@@ -30,3 +30,12 @@ Input shape (1, 3, 8750, 8750) -  inference 12114ms
 ```
 
 (I measured the time to make the model inference from `Dart List`, and get the output to `Dart List`, so the conversions to/from C++ data structures are already included in the measures. Testing ML model was [LDC](https://github.com/xavysp/LDC))
+
+### Linux Support
+1. Ensure you have installed PyTorch
+2. ```python
+    import torch
+    print(torch.utils.cmake_prefix_path)
+    ```
+3. Copy the output and open `native_pytorch/linux/CMakeLists.txt`
+4. Replace `list(APPEND CMAKE_PREFIX_PATH "/home/pc/anaconda3/envs/torch-gpu/lib/python3.8/site-packages/torch/share/cmake")` with `list(APPEND CMAKE_PREFIX_PATH "your_output")`
